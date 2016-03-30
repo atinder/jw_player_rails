@@ -13,9 +13,9 @@ module JwPlayerRails
     def jwplayer(options = {})
       options = DEFAULT_OPTIONS.merge(options)
 
-      result = %Q{<div id='#{options[:id]}'>This div will be replaced by the JW Player.</div>
+      result = %Q{<div id='#{options[:id]}'>Player Loading....</div>
                   <script type='text/javascript'>
-                    jwplayer('#{options[:id]}').setup(#{options.except(:id).to_json});
+                    var #{options[:instance_var] || playerInstance} = jwplayer('#{options[:id]}').setup(#{options.except(:id, :instance_var).to_json});
                   </script>}
 
       result.respond_to?(:html_safe) ? result.html_safe : result

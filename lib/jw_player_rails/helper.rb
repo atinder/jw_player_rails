@@ -2,12 +2,12 @@ module JwPlayerRails
   module Helper
     DEFAULT_OPTIONS = {
       id: "jwplayer6",
-      flashplayer: "/assets/flash_7.3.4.swf"
+      flashplayer: "/assets/flash_7.9.0.swf"
     }
 
     # Includes JWPlayer javascript library
     def jwplayer_assets
-      javascript_include_tag "jwplayer_7.3.4"
+      javascript_include_tag "jwplayer_7.9.0"
     end
 
     def jwplayer(options = {})
